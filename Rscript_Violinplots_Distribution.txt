@@ -1,0 +1,399 @@
+
+# install.packages("ggplot2")
+# install.packages("ggpubr") 
+
+
+library(ggplot2)
+library(ggpubr)
+
+
+data<- read.csv("StalkLodgingTraits_ZeamaysL.csv")
+
+head(data)
+
+
+
+plot1<- ggplot(data, aes(x=Location, y=Flexural_Stiffness..Nm.2., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = (bquote(bold("Flexural Stiffness (" * Nm^2 * ")"))), legend = FALSE) +												
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot1
+
+
+
+plot2<- ggplot(data, aes(x=Location, y=Maximum_Moment..Nm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Maximum Moment (Nm)", legend = FALSE) +																		
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot2
+
+
+
+plot3<- ggplot(data, aes(x=Location, y=Plant_Height..cm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Plant height (cm)", legend = FALSE) +																		
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot3
+
+
+
+plot4<- ggplot(data, aes(x=Location, y=Ear_Height..cm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Ear height (cm)", legend = FALSE) +																	
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot4
+
+
+
+Collage1<- ggarrange(
+		ggarrange(NULL, plot1, NULL, plot2, NULL, widths = c(0.1, 1, 0.1, 1, 0.1), nrow = 1),
+		ggarrange(NULL, plot3, NULL, plot4, NULL, widths = c(0.1, 1, 0.1, 1, 0.1), nrow = 1),
+		heights=c(2,2),
+		nrow = 2)
+
+Collage1
+
+
+ggsave("PlantLevelTraits_Labels_350dpi.tiff", Collage1, width=40, height=40, units="cm", dpi=350)	
+
+
+
+
+
+
+plot5<- ggplot(data, aes(x=Location, y=Major_Diameter_IN1..mm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Major Diameter E (mm)", legend = FALSE) +										
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot5
+
+
+
+plot6<- ggplot(data, aes(x=Location, y=Minor_Diameter_IN1..mm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Minor Diameter E (mm)", legend = FALSE) +											
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot6
+
+
+
+plot7<- ggplot(data, aes(x=Location, y=Rind_Thickness_IN1..mm., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Rind Thickness E (mm)", legend = FALSE) +
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot7
+
+
+
+plot8<- ggplot(data, aes(x=Location, y=Moment_Of_Inertia_IN1..mm.4., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Moment of Inertia E (mm^4)", legend = FALSE) +
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot8
+
+
+
+plot9<- ggplot(data, aes(x=Location, y=Section_Modulus_IN1..mm.3., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "Section Modulus E(mm^3)", legend = FALSE) +	
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot9
+
+
+
+plot10<- ggplot(data, aes(x=Location, y=IPS_IN1..N..1mm..3., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "IPS E (N^-1mm^-3)", legend = FALSE) +								
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot10
+
+
+
+plot11<- ggplot(data, aes(x=Location, y=RPR_IN1..N., fill=Location)) +
+  geom_violin(trim=FALSE) +
+  geom_boxplot(width=0.1, fill="white", outlier.size=0.7, outlier.stroke=0.7, linewidth = 0.5) +		
+  scale_fill_manual(values = c("#EE3B3B","#00BFFF", "#9ACD32", "#FF8C69")) +
+  labs(x = "", y = "RPR E(N)", legend = FALSE) +
+	theme(axis.text = element_text(face="bold", size = 15),
+	axis.title = element_text(face="bold", size = 25),
+	plot.title = element_text(face="bold", size = 40), 
+	panel.border = 	element_rect(color = "black", fill = NA,  linewidth = 1.5),					
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),
+	panel.background = element_blank(),
+	axis.line = element_line(colour = "black"),									
+	 axis.text.x = element_text(angle = 45, hjust = 1), #vjust = 0),
+	# axis.text.x = element_blank(), 										
+	 axis.text.y = element_blank(),  										
+	 axis.ticks = element_line(linewidth = 1.25),			
+	 axis.ticks.x = element_blank(), 										
+	# axis.ticks.y = element_blank(),																				
+	# axis.ticks.length.x = unit(0.4, "cm"),	
+	 axis.ticks.length.y = unit(0.3, "cm"),			
+	 legend.text = element_text(face = "bold", size = 20),
+	# legend.text = element_text(),
+	 legend.title = element_blank(),
+	 legend.position="top",
+	 legend.spacing.x = unit(1.0, 'cm')
+	)
+
+plot11
+
+
+
+Collage2<- ggarrange(
+		ggarrange(plot5, NULL, plot6, widths = c(1, 0.1, 1), nrow = 1),
+		ggarrange(plot7, NULL, plot8, widths = c(1, 0.1, 1), nrow = 1),
+		ggarrange(plot9, NULL, plot10, widths = c(1, 0.1, 1), nrow = 1),
+		ggarrange(plot11, NULL, NULL, widths = c(1, 0.1, 1), nrow = 1),
+		heights=c(4,4,4,4),
+		nrow = 4)
+
+
+Collage2
+# Collage3
+
+
+ggsave("EarInternodeLevelTraits.tiff", Collage2, width=40, height=50, units="cm", dpi=350)
+# ggsave("BottomInternodeLevelTraits.tiff", Collage3, width=40, height=50, units="cm", dpi=350)
+
